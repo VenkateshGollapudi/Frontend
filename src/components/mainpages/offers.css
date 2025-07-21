@@ -1,0 +1,145 @@
+src/components/mainpages/Offers.css */
+
+.offers-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f4f6;
+}
+
+.offer-banner {
+    text-align: center;
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.offer-banner h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.offer-banner p {
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+.offers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.offer-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.offer-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.offer-details h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.discount {
+    font-size: 1.2em;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.valid-until {
+    font-size: 0.9em;
+    color: #777;
+    margin: 10px 0;
+}
+
+.shop-now-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #ff4a4a;
+}
+/* src/components/mainpages/Offers.css */
+
+.offers-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f4f6;
+}
+
+/* Carousel takes up full width */
+.offers-carousel {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 400px; /* Adjust as needed for height */
+    object-fit: fill;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.carousel-caption h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.offer-banner {
+    text-align: center;
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Remaining CSS for Offers Grid

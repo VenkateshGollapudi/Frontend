@@ -1,0 +1,219 @@
+/* src/components/mainpages/home.css */
+
+.home-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  color: #333;
+  background-color: rgb(190, 230, 214);
+}
+
+/* Banner Section */
+.banner-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: rgb(238, 231, 231);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content {
+  max-width: 50%;
+}
+
+.banner-subtitle {
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.banner-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.shop-now-btn {
+  background-color: #ff4d4f;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background-color: #e63a3c;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container properly */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Categories Section */
+.categories-section {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  
+}
+
+.category {
+  position: relative;
+  width: 30%;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category:hover {
+  transform: scale(1.05);
+}
+
+.category img {
+  width: 100%;
+  height: 100%; /* Ensures the images fill the container */
+  object-fit: cover; /* Ensures the image is properly fitted */
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  
+}
+
+.category:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Featured Products Section */
+.featured-section, .new-arrivals-section, .testimonials-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+  
+}
+
+/* Product Cards */
+.featured-products, .new-arrivals {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  
+}
+
+.product-card {
+  width: 30%;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 200px; /* Adjust height to maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fits the container properly */
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+/* Testimonials Section */
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  transition: transform 0.3s ease;
+}
+
+.testimonial p:last-child {
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .banner-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-content {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .categories-section, .featured-products, .new-arrivals, .testimonials {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .category, .product-card, .testimonial {
+    width: 100%;
+  }
+
+  .product-card img {
+    height: auto; /* Allow images to adjust their height for smaller screens */
+  }
+}

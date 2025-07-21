@@ -1,0 +1,245 @@
+.items-container {
+    display: flex;
+    padding: 20px;
+    
+}
+
+.filters-container {
+    width: 25%;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    background-color: rgb(190, 230, 214);
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filter-container, .sort-container {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.filter-select, .sort-select {
+    padding: 10px;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.products-list-container {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    background-color: rgb(190, 230, 214);
+}
+
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-card {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Modal Styles */
+.product-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.product-detail-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+}
+
+.product-detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #d40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Modal Styles */
+.product-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.product-detail-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    text-align: center;
+    position: relative; /* To position the cross button */
+}
+
+.product-detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px; /* FontAwesome icon size */
+    padding: 0;
+    background-color: transparent;
+    color: #d40000;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* FontAwesome X icon */
+.close-btn i {
+    font-size: 1.5em; /* Adjust icon size */
+}
+/* Add to Cart & Buy Now Buttons */
+.add-to-cart-btn,
+.buy-now-btn {
+    padding: 10px 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 5px;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.add-to-cart-btn:hover,
+.buy-now-btn:hover {
+    background-color: #fcd200;
+}
+
+/* Modal Buttons */
+.product-detail-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Other styles remain unchanged */
+.product-card-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.product-card-buttons button {
+    padding: 8px 16px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.product-card-buttons button:hover {
+    background-color: #fcd200;
+}
+
+.rating-stars {
+    font-size: 23px;
+    color: gold;
+}
+
+.rating-stars .empty {
+    color: #ddd;
+}
+
+.rating-stars .filled {
+    color: gold;
+}
+
+/* Add this to your CSS file (e.g., items.css) */
+.go-to-cart-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    height: 40px;
+    margin-left: 100px;
+}
+
+.go-to-cart-btn:hover {
+    background-color: rgb(220, 220, 31);
+    color: black;
+}
