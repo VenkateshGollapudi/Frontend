@@ -7,9 +7,24 @@ import { Link } from "react-router-dom";
 
 export const Home = () => {
   const state = useContext(GlobalState);
-  const products = state.ProductApi.products[0];
+  const products = state.ProductApi.products; // ✅ Fixed: Remove [0]
+
+  // ✅ Add safety checks
+  if (!products || !Array.isArray(products) || products.length === 0) {
+    return (
+      <div className="home-container">
+        <div className="banner-section">
+          <div className="banner-content">
+            <h2>Loading products...</h2>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const getRandomProducts = (arr, count) => {
+    // ✅ Add safety check
+    if (!arr || !Array.isArray(arr) || arr.length === 0) return [];
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
   };
@@ -29,7 +44,7 @@ export const Home = () => {
         </div>
         <div className="banner-image">
           <img
-            src="https://www.google.com/imgres?q=groceries&imgurl=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fhealthy-groceries-bag-66eaef810acf6.jpg%3Fcrop%3D1xw%3A0.9998556581986143xh%3Bcenter%2Ctop%26resize%3D1200%3A*&imgrefurl=https%3A%2F%2Fwww.goodhousekeeping.com%2Fhealth%2Fdiet-nutrition%2Fa40365021%2Fhealthy-grocery-list%2F&docid=wf0Zu-RNMoIPiM&tbnid=D8xlvpGquhpAwM&vet=12ahUKEwjL9JGFqMyOAxXP3TgGHc_CHZQQM3oECAwQAA..i&w=1200&h=675&hcb=2&ved=2ahUKEwjL9JGFqMyOAxXP3TgGHc_CHZQQM3oECAwQAA"
+            src="https://hips.hearstapps.com/hmg-prod/images/healthy-groceries-bag-66eaef810acf6.jpg"
             alt="Groceries"
           />
         </div>
@@ -40,7 +55,10 @@ export const Home = () => {
         {categories.map((product) => (
           <div className="category" key={product._id}>
             <Link to={`/detail/${product._id}`}>
-              <img src={product.images.url} alt={product.product_title} />
+              <img
+                src={product.images?.url || "/placeholder-image.jpg"}
+                alt={product.product_title}
+              />
               <div className="category-overlay">{product.category}</div>
             </Link>
           </div>
@@ -54,7 +72,10 @@ export const Home = () => {
           {featured.map((product) => (
             <div className="product-card" key={product._id}>
               <Link to={`/detail/${product._id}`}>
-                <img src={product.images.url} alt={product.product_title} />
+                <img
+                  src={product.images?.url || "/placeholder-image.jpg"}
+                  alt={product.product_title}
+                />
               </Link>
               <p className="product-name">{product.product_title}</p>
               <p className="product-price">₹{product.price}</p>
@@ -70,7 +91,10 @@ export const Home = () => {
           {newArrivals.map((product) => (
             <div className="product-card" key={product._id}>
               <Link to={`/detail/${product._id}`}>
-                <img src={product.images.url} alt={product.product_title} />
+                <img
+                  src={product.images?.url || "/placeholder-image.jpg"}
+                  alt={product.product_title}
+                />
               </Link>
               <p className="product-name">{product.product_title}</p>
               <p className="product-price">₹{product.price}</p>
@@ -86,7 +110,10 @@ export const Home = () => {
           {bestsellers.map((product) => (
             <div className="product-card" key={product._id}>
               <Link to={`/detail/${product._id}`}>
-                <img src={product.images.url} alt={product.product_title} />
+                <img
+                  src={product.images?.url || "/placeholder-image.jpg"}
+                  alt={product.product_title}
+                />
               </Link>
               <p className="product-name">{product.product_title}</p>
               <p className="product-price">₹{product.price}</p>

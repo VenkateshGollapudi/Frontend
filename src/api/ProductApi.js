@@ -8,10 +8,10 @@ export const ProductApi = () => {
     try {
       const baseUrl = process.env.REACT_APP_API_URL || "";
       const res = await axios.get(`${baseUrl}/api/products`);
-      setProducts(res.data); // ✅ Fixed: Remove extra await
+      setProducts(res.data); //
     } catch (error) {
       console.error("Error fetching products:", error);
-      setProducts([]); // Set empty array on error
+      setProducts([]);
     }
   };
 
@@ -20,8 +20,8 @@ export const ProductApi = () => {
   }, []);
 
   return {
-    products: products, // ✅ Fixed: Return just the products array
-    setProducts: setProducts, // ✅ Return setter separately if needed
-    getProducts: getProducts, // ✅ Expose refetch function
+    products: products,
+    setProducts: setProducts,
+    getProducts: getProducts,
   };
 };
