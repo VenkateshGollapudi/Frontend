@@ -37,7 +37,7 @@ export const Header = () => {
   const loggedRouter = () => (
     <>
       <li>
-        <Link to="/history">History</Link>
+        <Link to="/history"></Link>
       </li>
       <li>
         <Link to="/logout">Logout</Link>

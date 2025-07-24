@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export const Register = () => {
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-    isAdmin:false
+    name: "",
+    email: "",
+    password: "",
+    isAdmin: false,
   });
 
   const onChangeInput = (e) => {
     // console.log(e);
-    let {value}=e.target;
-    const { name} = e.target;
-    if(name==="isAdmin"){
-      value=e.target.checked;
+    let { value } = e.target;
+    const { name } = e.target;
+    if (name === "isAdmin") {
+      value = e.target.checked;
     }
     setUser({ ...user, [name]: value });
     // console.log(user);
@@ -24,10 +24,10 @@ export const Register = () => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('user/register', { ...user });
-      localStorage.setItem('firstRegister', true);
-      localStorage.setItem('firstLogin', true);
-      window.location.href = '/';
+      await axios.post("user/register", { ...user });
+      localStorage.setItem("firstRegister", true);
+      localStorage.setItem("firstLogin", true);
+      window.location.href = "/";
     } catch (err) {
       alert(err.response.data.msg);
     }
@@ -37,12 +37,16 @@ export const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Create your account</h2>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Create your account
+          </h2>
         </div>
         <form className="mt-8 space-y-6" onSubmit={registerSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="name" className="sr-only">Name</label>
+              <label htmlFor="name" className="sr-only">
+                Name
+              </label>
               <input
                 id="name"
                 name="name"
@@ -55,7 +59,9 @@ export const Register = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="sr-only">Email</label>
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
               <input
                 id="email"
                 name="email"
@@ -68,7 +74,9 @@ export const Register = () => {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">Password</label>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
               <input
                 id="password"
                 name="password"
@@ -81,12 +89,11 @@ export const Register = () => {
               />
             </div>
           </div>
-          <div className='text-center'>
+          <div className="text-center">
             <label className="inline-flex items-center">
-              IsAdmin
               <input
-                type='checkbox'
-                name='isAdmin'
+                type=""
+                name="isAdmin"
                 checked={user.isAdmin}
                 onChange={onChangeInput}
                 className="ml-2 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
@@ -104,8 +111,11 @@ export const Register = () => {
         </form>
         <div className="text-center">
           <p className="mt-2 text-sm text-gray-600">
-            Already Registered?{' '}
-            <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+            Already Registered?{" "}
+            <Link
+              to="/login"
+              className="font-medium text-indigo-600 hover:text-indigo-500"
+            >
               Login
             </Link>
           </p>
