@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { BtnRender } from './BtnRender';
+import React, { useContext, useState } from "react";
+import { BtnRender } from "./BtnRender";
 
 export const ProductList = ({ product, isAdmin }) => {
   const [flag, setFlag] = useState(false);
@@ -27,7 +27,7 @@ export const ProductList = ({ product, isAdmin }) => {
       {/* Product Image */}
       <div className="product_card">
         <img
-          src={product.images.url}
+          src={product.images?.url || "/placeholder-image.jpg"} // ✅ Fixed: Added safety check
           alt={product.product_title}
           className="w-full h-64 object-full rounded-t-lg mb-4"
         />
@@ -35,11 +35,14 @@ export const ProductList = ({ product, isAdmin }) => {
 
       {/* Product Info */}
       <div className="product_box flex-grow">
-        <h2 className="text-xl font-semibold text-gray-800" title={product.product_title}>
+        <h2
+          className="text-xl font-semibold text-gray-800"
+          title={product.product_title}
+        >
           {product.product_title}
         </h2>
         <span className="text-lg text-gray-600 font-medium mt-2 block">
-          {product.price ? `₹${product.price}` : 'Price unavailable'}
+          {product.price ? `₹${product.price}` : "Price unavailable"}
         </span>
         <p className="text-gray-500 mt-2">{product.description}</p>
       </div>

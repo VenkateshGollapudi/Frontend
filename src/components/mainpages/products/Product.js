@@ -4,8 +4,21 @@ import { ProductList } from "../utils/ProductLists/ProductList";
 
 export const Product = () => {
   const state = useContext(GlobalState);
-  const products = state.ProductApi.products[0];
+  const products = state.ProductApi.products; // ✅ Fixed: Access the products array directly
   const [isAdmin] = state.UserApi.isAdmin;
+
+  // ✅ Add safety checks
+  if (!products) {
+    return <div className="container mx-auto p-4">Loading products...</div>;
+  }
+
+  if (!Array.isArray(products)) {
+    return <div className="container mx-auto p-4">No products available.</div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="container mx-auto p-4">No products found.</div>;
+  }
 
   return (
     <div className="container mx-auto p-4">
